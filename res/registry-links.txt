@@ -1,0 +1,5 @@
+
+http://book.itzero.com/read/microsoft/0507/microsoft.press.microsoft.windows.internals.fourth.edition.dec.2004.internal.fixed.ebook%2Dddu%5Fhtml/0735619174/ch04lev1sec1.html
+http://home.eunet.no/pnordahl/ntpasswd/WinReg.txt
+http://paper.ijcsns.org/07_book/200708/20070828.pdf
+http://www.microsoft.com/technet/archive/winntas/proddocs/concept/xcpaa.mspx?mfr=true

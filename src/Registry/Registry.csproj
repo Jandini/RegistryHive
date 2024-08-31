@@ -1,0 +1,91 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB8E02F1-9362-4DD9-A7F2-7F862D0FAC9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Registry</RootNamespace>
+    <AssemblyName>Registry</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IO\HiveRecord.cs" />
+    <Compile Include="IO\HiveHeader.cs" />
+    <Compile Include="IO\HiveReader.cs" />
+    <Compile Include="IO\KeyRecord.cs" />
+    <Compile Include="IO\ValueListRecord.cs" />
+    <Compile Include="Parsers\NTRegistryKey.cs" />
+    <Compile Include="Parsers\NTRegistryValue.cs" />
+    <Compile Include="Viewers\NTRegistryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewers\NTRegistryViewer.designer.cs">
+      <DependentUpon>NTRegistryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewers\NTRegUSBViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewers\NTRegUSBViewer.Designer.cs">
+      <DependentUpon>NTRegUSBViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Parsers\NTRegistryTree.cs" />
+    <Compile Include="IO\HiveIO.cs" />
+    <Compile Include="Structures\Structures.cs" />
+    <Compile Include="IO\SubKeyListRecord.cs" />
+    <Compile Include="IO\ValueRecord.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Viewers\NTRegistryViewer.resx">
+      <DependentUpon>NTRegistryViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viewers\NTRegUSBViewer.resx">
+      <DependentUpon>NTRegUSBViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
